@@ -1,0 +1,15 @@
+services:
+  eufy-frigate-battery-bridge:
+    build: .
+    container_name: eufy-frigate-battery-bridge
+    restart: unless-stopped
+    environment:
+      TZ: America/New_York            # log timestamps
+    volumes:
+      - ./config.json:/config/config.json:ro
+    # Must reach Frigate's go2rtc (API :1984, RTSP :8554) and Frigate's API (:5000) by name.
+    networks: [frigate]
+networks:
+  frigate:
+    external: true
+    name: frigate_default             # Frigate's network name in your setup

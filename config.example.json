@@ -1,0 +1,13 @@
+{
+  "eufy_ws": "ws://eufy-security-ws:3000",
+  "go2rtc_api": "http://frigate:1984",
+  "rtsp_publish": "rtsp://GO2RTC_RTSP_USER:GO2RTC_RTSP_PASSWORD@frigate:8554/{name}",
+  "frigate_api": "http://frigate:5000",
+  "cameras": [
+    { "name": "shed", "title": "Shed", "serial": "T8162T0000000000" },
+    { "name": "backyard", "title": "Backyard", "serial": "T8162T1111111111" }
+  ],
+  "audio": true,
+  "hold_secs": 60,
+  "max_secs": 900
+}
