@@ -114,6 +114,8 @@ Trigger an automation with `platform: webhook` and use `trigger.json.event_id` t
 
 - **Encoder exits every 3 s with "Failed reading RTSP data: End of file":** the stream isn't declared
   in `go2rtc.streams` (step 2), or the RTSP user/password in `rtsp_publish` is wrong.
+- **Nothing wakes on motion:** notifications must be on for the camera in the eufy app, otherwise
+  eufy-security-ws gets no motion events. Mute them on the phone instead of turning them off.
 - **Stuck on "waking up", then "no video for 15 s, asking eufy again":** check the camera's streaming
   quality (step 4), its battery and Wi-Fi signal, and that the eufy app can open it live.
 - **"start_livestream failed":** eufy-security-ws lost its eufy session or the HomeBase is busy with
@@ -137,6 +139,10 @@ Trigger an automation with `platform: webhook` and use `trigger.json.event_id` t
 
 Frigate 0.18.2, eufy-security-ws 3.1.0 (eufy-security-client 4.1.0, API schema 21), two eufy
 `T8162` battery cameras (firmware 3.1.5.8) on a HomeBase 3.
+
+Reported working by users (#1): eufyCam 2C `T8140-Z` (firmware 4.1.4, motion + live view wake) and
+eufyCam 3 `T8160` (firmware 3.4.3.0, live view wake; motion wake not yet confirmed), both on a
+HomeBase 3.
 
 Heads-up: eufy-security-client describes itself as a stopgap while eufy moves to a new platform,
 so upstream changes may break this.
