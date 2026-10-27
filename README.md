@@ -141,7 +141,7 @@ Frigate 0.18.2, eufy-security-ws 3.1.0 (eufy-security-client 4.1.0, API schema 2
 `T8162` battery cameras (firmware 3.1.5.8) on a HomeBase 3.
 
 Reported working by users (#1): eufyCam 2C `T8140-Z` (firmware 4.1.4, motion + live view wake) and
-eufyCam 3 `T8160` (firmware 3.4.3.0, live view wake; motion wake not yet confirmed), both on a
+eufyCam 3 `T8160` (firmware 3.4.3.0, motion + live view wake), both on a
 HomeBase 3.
 
 Heads-up: eufy-security-client describes itself as a stopgap while eufy moves to a new platform,
